@@ -1,0 +1,10 @@
+17: Develop a Python script to open an existing text file named "inventory.txt"
+# read_inventory_file.py
+
+def main():
+    with open("inventory.txt", 'r') as file:
+        for line in file:
+            print(line.strip())
+
+if __name__ == "__main__":
+    main()

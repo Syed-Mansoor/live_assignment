@@ -1,0 +1,21 @@
+ 18: Create a Python script to read a text file named "expenses.txt" and calculate total expenses
+ # calculate_expenses.py
+
+def calculate_total_expenses(filename):
+    total = 0
+    with open(filename, 'r') as file:
+        for line in file:
+            try:
+                amount = float(line.strip())
+                total += amount
+            except ValueError:
+                pass  # Skip lines that are not numeric
+    return total
+
+def main():
+    filename = "expenses.txt"
+    total_expenses = calculate_total_expenses(filename)
+    print(f"Total expenses: ${total_expenses:.2f}")
+
+if __name__ == "__main__":
+    main()

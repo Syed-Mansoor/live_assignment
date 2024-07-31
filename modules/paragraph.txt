@@ -1,0 +1,25 @@
+19: Create a Python program to count word occurrences in "paragraph.txt"
+# count_word_occurrences.py
+
+def count_word_occurrences(filename):
+    word_count = {}
+    with open(filename, 'r') as file:
+        for line in file:
+            words = line.strip().split()
+            for word in words:
+                word = word.lower()
+                if word in word_count:
+                    word_count[word] += 1
+                else:
+                    word_count[word] = 1
+    return word_count
+
+def main():
+    filename = "paragraph.txt"
+    word_count = count_word_occurrences(filename)
+    sorted_word_count = dict(sorted(word_count.items()))  # Sort by keys alphabetically
+    for word, count in sorted_word_count.items():
+        print(f"{word}: {count}")
+
+if __name__ == "__main__":
+    main()

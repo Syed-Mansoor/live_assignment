@@ -1,0 +1,11 @@
+# 16: Write a Python program to create a text file named "employees.txt"
+# create_employees_file.py
+
+def main():
+    with open("employees.txt", 'w') as file:
+        file.write("Name: syed mansoor\n")
+        file.write("Age: 23\n")
+        file.write("Salary: 5000\n")
+
+if __name__ == "__main__":
+    main()
